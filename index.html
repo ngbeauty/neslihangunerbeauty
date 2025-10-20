@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NG BEAUTY | Randevu Sistemi</title>
+  <style>
+    :root{
+      --rose:#c48b9f;
+      --rose-dark:#b06c84;
+      --bg:#fff8fa;
+      --muted:#666;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, Poppins, system-ui, -apple-system, 'Helvetica Neue', Arial; background:var(--bg); color:#222;}
+    /* header */
+    header{background:var(--rose); color:#fff; padding:18px 16px; display:flex; align-items:center; gap:16px; justify-content:center; flex-direction:column;}
+    header .brand{display:flex;align-items:center;gap:14px; width:100%; max-width:1100px; padding:0 12px; box-sizing:border-box; justify-content:center;}
+    header img{max-width:220px;height:auto; display:block;}
+    header h1{margin:6px 0 0;font-size:18px;font-weight:600;letter-spacing:0.6px;color:#fff;}
+    /* hero */
+    .hero{background:#f9e6ec;padding:26px 16px;text-align:center;}
+    .hero h2{color:var(--rose-dark);margin:0 0 8px;font-size:20px;}
+    .hero p{margin:0 0 14px;color:var(--muted);max-width:820px;margin-left:auto;margin-right:auto;}
+    .hero .cta{background:var(--rose);color:#fff;border:0;padding:12px 20px;border-radius:36px;font-weight:600;cursor:pointer;}
+    .hero .cta:hover{background:var(--rose-dark);}
+    /* main */
+    main{max-width:1100px;margin:18px auto;padding:0 16px 40px;}
+    .grid{display:grid;grid-template-columns:1fr;gap:18px;}
+    @media(min-width:900px){ .grid{grid-template-columns:1fr 420px;} }
+    .content{}
+    .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(10,10,10,0.05);}
+    h3{color:var(--rose-dark);margin:0 0 10px;}
+    p.lead{color:var(--muted);margin:0 0 12px;}
+    label{display:block;font-weight:600;margin:10px 0 6px;font-size:14px;color:#333;}
+    input[type="text"], input[type="tel"], input[type="date"], input[type="time"], select, textarea{
+      width:100%; padding:10px 12px; border-radius:8px; border:1px solid #ddd; font-size:15px;
+    }
+    .btn-full{background:var(--rose); color:#fff; border:0; padding:12px 14px; border-radius:10px; font-weight:700; cursor:pointer; width:100%;}
+    .btn-full:hover{background:var(--rose-dark);}
+    .small{font-size:13px;color:var(--muted);margin-top:8px;}
+    /* right column */
+    .side .contact{display:flex;flex-direction:column;gap:10px}
+    .pill{background:linear-gradient(90deg,var(--rose),var(--rose-dark));color:#fff;padding:10px 12px;border-radius:999px;display:inline-block;font-weight:700}
+    footer{background:#fff;padding:24px 16px;text-align:center;color:#666;border-top:1px solid #f0e7e7;margin-top:30px;}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <img src="logo.png" alt="NG Beauty Logo">
+    </div>
+    <h1>Güzelliğe Dair Her Şey</h1>
+  </header>
+
+  <div class="hero">
+    <h2>Güzelliğe Dair Her Şey Burada!</h2>
+    <p>Profesyonel bakım, estetik dokunuşlar ve size özel güzellik deneyimi. Randevunuzu hızlıca oluşturun.</p>
+    <button class="cta" onclick="document.getElementById('randevu').scrollIntoView({behavior:'smooth'})">💅 Randevu Al</button>
+  </div>
+
+  <main>
+    <div class="grid">
+      <div class="content">
+        <div class="card">
+          <h3>Hizmetlerimiz</h3>
+          <p class="lead">Hydrafacial, Klasik Cilt Bakımı, İğnesiz Mezoterapi, Leke Protokolü, Akne & Skar Protokolü, Prenses Cilt Bakımı, Kirpik Lifting, Kaş Laminasyon, Altın Oran Kaş Tasarımı, 3D Erkek Kaş Tasarımı ve daha fazlası.</p>
+          <h3 style="margin-top:18px">Kalıcı Makyaj</h3>
+          <p class="lead">Pudralama, Microblading, Mix İşlem, Dudak Renklendirme, Dipliner, Eyeliner.</p>
+          <h3 style="margin-top:18px">Lazer Epilasyon</h3>
+          <p class="lead">Tüm Vücut, 4 Bölge, 3 Bölge, 2 Bölge. Erkek lazer uygulamaları için özel paketlerimiz mevcuttur.</p>
+        </div>
+
+        <div id="randevu" class="card" style="margin-top:16px;">
+          <h3>Randevu Oluştur</h3>
+          <form id="randevuForm" onsubmit="return false;">
+            <label for="isim">İsim Soyisim</label>
+            <input id="isim" type="text" placeholder="Adınızı giriniz" required>
+
+            <label for="telefon">Telefon Numarası</label>
+            <input id="telefon" type="tel" placeholder="05xxxxxxxxx" required>
+
+            <label for="islem">İşlem Türü</label>
+            <select id="islem" required>
+              <option value="">Seçiniz</option>
+              <option>Hydrafacial Cilt Bakımı</option>
+              <option>Klasik Cilt Bakımı</option>
+              <option>İğnesiz Mezoterapi</option>
+              <option>Leke Protokolü</option>
+              <option>Akne - Skar Protokolü</option>
+              <option>Prenses Cilt Bakımı</option>
+              <option>Kirpik Lifting</option>
+              <option>Kaş Laminasyon</option>
+              <option>Altın Oran Kaş Tasarımı</option>
+              <option>3D Erkek Kaş Tasarımı</option>
+              <option>Pudralama (Kalıcı Makyaj)</option>
+              <option>Microblading (Kalıcı Makyaj)</option>
+              <option>Mix İşlem (Kalıcı Makyaj)</option>
+              <option>Dudak Renklendirme</option>
+              <option>Dipliner / Eyeliner</option>
+              <option>Lazer Epilasyon - Tüm Vücut</option>
+              <option>Lazer Epilasyon - 4 Bölge</option>
+              <option>Lazer Epilasyon - 3 Bölge</option>
+              <option>Lazer Epilasyon - 2 Bölge</option>
+              <option>Erkek Lazer - Kemer Üstü</option>
+              <option>Erkek Lazer - 4 Bölge</option>
+              <option>Erkek Lazer - 3 Bölge</option>
+              <option>Protez Tırnak</option>
+              <option>Kalıcı Oje</option>
+              <option>Kuru Manikür / Pedikür</option>
+              <option>Ayak Bakımı</option>
+            </select>
+
+            <label for="tarih">Tarih</label>
+            <input id="tarih" type="date" required>
+
+            <label for="saat">Saat</label>
+            <select id="saat" required>
+              <option value="">Seçiniz</option>
+            </select>
+
+            <div style="margin-top:8px;">
+              <button class="btn-full" onclick="goWhatsApp()">💬 WhatsApp'tan Onayla</button>
+            </div>
+            <div class="small">Randevunuz doğrudan WhatsApp üzerinden oluşturulacaktır.</div>
+          </form>
+        </div>
+      </div>
+
+      <aside class="side">
+        <div class="card contact">
+          <div><strong>İletişim</strong></div>
+          <div class="pill">📞 0 533 615 75 20</div>
+          <div class="small">Adres: Beyaz Plaza No:6 Kat:1 Daire:13, Büyükçekmece / İstanbul</div>
+          <div style="margin-top:10px;"><a class="btn-full" href="https://wa.me/905336157520" target="_blank">WhatsApp ile Hemen Yaz</a></div>
+          <div style="margin-top:12px;"><a href="https://www.google.com/maps/dir/Neslihan+%26+G%C3%BCner+Beauty+Studio,+P%C4%B1nartepe,+Yavuz+Sultan+Selim+Bulvar%C4%B1+Beyaz+Plaza+No:6+Kat:1+Daire:13,+B%C3%BCy%C3%BCk%C3%A7mece%2F%C4%B0stanbul" target="_blank" class="small">📍 Haritada Gör</a></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>© 2025 NG BEAUTY | Güzelliğe Dair Her Şey</footer>
+
+<script>
+// Saat seçenekleri oluştur (10:00 - 18:30, 30 dk aralık)
+(function fillTimes(){
+  const select = document.getElementById('saat');
+  const start = 10*60; // minutes
+  const end = 18*60+30;
+  for(let m=start;m<=end;m+=30){
+    const hh = String(Math.floor(m/60)).padStart(2,'0');
+    const mm = String(m%60).padStart(2,'0');
+    const opt = document.createElement('option');
+    opt.value = `${hh}:${mm}`;
+    opt.textContent = `${hh}:${mm}`;
+    select.appendChild(opt);
+  }
+})();
+
+function goWhatsApp(){
+  const isim = document.getElementById('isim').value.trim();
+  const telefon = document.getElementById('telefon').value.trim();
+  const islem = document.getElementById('islem').value;
+  const tarih = document.getElementById('tarih').value;
+  const saat = document.getElementById('saat').value;
+  if(!isim||!telefon||!islem||!tarih||!saat){ alert('Lütfen tüm alanları doldurunuz.'); return; }
+  const mesaj = encodeURIComponent(`Merhaba, ben ${isim}.\n${islem} işlemi için randevu istiyorum.\nTarih: ${tarih} Saat: ${saat}\nTelefon: ${telefon}`);
+  window.open('https://wa.me/905336157520?text='+mesaj,'_blank');
+}
+</script>
+
+</body>
+</html>
